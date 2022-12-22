@@ -16,7 +16,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        //UserDefaultsManager.storage.setBool(value: false, data: .onBoardingIsShowed)
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+                window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+                window?.windowScene = windowScene
+        var navigationController : NavigationController
+//        if currentReachabilityStatus == .notReachable{
+//            navigationController = NavigationController(rootViewController: UIStoryboard(name: "NoInternetStoryboard", bundle: nil).instantiateInitialViewController()!)
+//        }else if !UserDefaultsManager.storage.getBool(data: .onBoardingIsShowed){
+//            navigationController = NavigationController(rootViewController: UIStoryboard(name: "OnBoardingStoryboard", bundle: nil).instantiateInitialViewController()!)
+//        }else{
+//            navigationController = NavigationController(rootViewController: UIStoryboard(name: "LoginViewStoryboard", bundle: nil).instantiateInitialViewController()!)
+//        }
+        navigationController = NavigationController(rootViewController: UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController()!)
+        window?.rootViewController = navigationController
+                window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -47,7 +61,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
 
         // Save changes in the application's managed object context when the application transitions to the background.
-        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+        //(UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+        CoreDataManager.shared.save()
     }
 
 

@@ -7,16 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		236DCAB72951ED3100C2C0D1 /* Students.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCAB62951ED3100C2C0D1 /* Students.swift */; };
+		236DCABA2951F3F000C2C0D1 /* Teacher.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236DCAB92951F3F000C2C0D1 /* Teacher.storyboard */; };
+		236DCABE2951F48200C2C0D1 /* TeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCABD2951F48100C2C0D1 /* TeacherViewController.swift */; };
+		236DCAC02951FB8B00C2C0D1 /* GroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCABF2951FB8B00C2C0D1 /* GroupCollectionViewCell.swift */; };
+		236DCAC32952052E00C2C0D1 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 236DCAC22952052E00C2C0D1 /* libsqlite3.tbd */; };
+		236DCAE629546CDB00C2C0D1 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCAE529546CDB00C2C0D1 /* CoreDataManager.swift */; };
+		236DCAF72954738F00C2C0D1 /* dyploma.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 23B64D222951E27E00ED81B7 /* dyploma.xcdatamodeld */; };
+		236DCB002954791C00C2C0D1 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCAF82954791C00C2C0D1 /* User+CoreDataClass.swift */; };
+		236DCB012954791C00C2C0D1 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCAF92954791C00C2C0D1 /* User+CoreDataProperties.swift */; };
+		236DCB022954791C00C2C0D1 /* Teacher+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCAFA2954791C00C2C0D1 /* Teacher+CoreDataClass.swift */; };
+		236DCB032954791C00C2C0D1 /* Teacher+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCAFB2954791C00C2C0D1 /* Teacher+CoreDataProperties.swift */; };
+		236DCB042954791C00C2C0D1 /* Group+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCAFC2954791C00C2C0D1 /* Group+CoreDataClass.swift */; };
+		236DCB052954791C00C2C0D1 /* Group+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCAFD2954791C00C2C0D1 /* Group+CoreDataProperties.swift */; };
+		236DCB062954791C00C2C0D1 /* Student+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCAFE2954791C00C2C0D1 /* Student+CoreDataClass.swift */; };
+		236DCB072954791C00C2C0D1 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCAFF2954791C00C2C0D1 /* Student+CoreDataProperties.swift */; };
 		23B64D1A2951E27E00ED81B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B64D192951E27E00ED81B7 /* AppDelegate.swift */; };
 		23B64D1C2951E27E00ED81B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B64D1B2951E27E00ED81B7 /* SceneDelegate.swift */; };
-		23B64D1E2951E27E00ED81B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B64D1D2951E27E00ED81B7 /* ViewController.swift */; };
-		23B64D212951E27E00ED81B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23B64D1F2951E27E00ED81B7 /* Main.storyboard */; };
-		23B64D242951E27E00ED81B7 /* dyploma.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 23B64D222951E27E00ED81B7 /* dyploma.xcdatamodeld */; };
+		23B64D1E2951E27E00ED81B7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B64D1D2951E27E00ED81B7 /* LoginViewController.swift */; };
 		23B64D262951E28100ED81B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23B64D252951E28100ED81B7 /* Assets.xcassets */; };
 		23B64D292951E28100ED81B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23B64D272951E28100ED81B7 /* LaunchScreen.storyboard */; };
 		23B64D342951E28200ED81B7 /* dyplomaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B64D332951E28200ED81B7 /* dyplomaTests.swift */; };
 		23B64D3E2951E28200ED81B7 /* dyplomaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B64D3D2951E28200ED81B7 /* dyplomaUITests.swift */; };
 		23B64D402951E28200ED81B7 /* dyplomaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B64D3F2951E28200ED81B7 /* dyplomaUITestsLaunchTests.swift */; };
+		23B64D4E2951E5B700ED81B7 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23B64D4D2951E5B700ED81B7 /* Login.storyboard */; };
+		23B64D502951E63100ED81B7 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B64D4F2951E63100ED81B7 /* NavigationController.swift */; };
+		23B64D522951E66A00ED81B7 /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B64D512951E66A00ED81B7 /* KeyboardHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,11 +53,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		236DCAB62951ED3100C2C0D1 /* Students.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Students.swift; sourceTree = "<group>"; };
+		236DCAB92951F3F000C2C0D1 /* Teacher.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Teacher.storyboard; sourceTree = "<group>"; };
+		236DCABD2951F48100C2C0D1 /* TeacherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherViewController.swift; sourceTree = "<group>"; };
+		236DCABF2951FB8B00C2C0D1 /* GroupCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCollectionViewCell.swift; sourceTree = "<group>"; };
+		236DCAC22952052E00C2C0D1 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		236DCAE529546CDB00C2C0D1 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		236DCAF82954791C00C2C0D1 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		236DCAF92954791C00C2C0D1 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		236DCAFA2954791C00C2C0D1 /* Teacher+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Teacher+CoreDataClass.swift"; sourceTree = "<group>"; };
+		236DCAFB2954791C00C2C0D1 /* Teacher+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Teacher+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		236DCAFC2954791C00C2C0D1 /* Group+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataClass.swift"; sourceTree = "<group>"; };
+		236DCAFD2954791C00C2C0D1 /* Group+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		236DCAFE2954791C00C2C0D1 /* Student+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataClass.swift"; sourceTree = "<group>"; };
+		236DCAFF2954791C00C2C0D1 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		23B64D162951E27E00ED81B7 /* dyploma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dyploma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23B64D192951E27E00ED81B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23B64D1B2951E27E00ED81B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		23B64D1D2951E27E00ED81B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		23B64D202951E27E00ED81B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		23B64D1D2951E27E00ED81B7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		23B64D232951E27E00ED81B7 /* dyploma.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dyploma.xcdatamodel; sourceTree = "<group>"; };
 		23B64D252951E28100ED81B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23B64D282951E28100ED81B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +80,9 @@
 		23B64D392951E28200ED81B7 /* dyplomaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dyplomaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		23B64D3D2951E28200ED81B7 /* dyplomaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dyplomaUITests.swift; sourceTree = "<group>"; };
 		23B64D3F2951E28200ED81B7 /* dyplomaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dyplomaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		23B64D4D2951E5B700ED81B7 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		23B64D4F2951E63100ED81B7 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		23B64D512951E66A00ED81B7 /* KeyboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				236DCAC32952052E00C2C0D1 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +111,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		236DCAB82951F3D400C2C0D1 /* teacher */ = {
+			isa = PBXGroup;
+			children = (
+				236DCAB92951F3F000C2C0D1 /* Teacher.storyboard */,
+				236DCABD2951F48100C2C0D1 /* TeacherViewController.swift */,
+				236DCABF2951FB8B00C2C0D1 /* GroupCollectionViewCell.swift */,
+			);
+			path = teacher;
+			sourceTree = "<group>";
+		};
+		236DCAC12952052E00C2C0D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				236DCAC22952052E00C2C0D1 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		236DCAD42953265D00C2C0D1 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				236DCAF82954791C00C2C0D1 /* User+CoreDataClass.swift */,
+				236DCAF92954791C00C2C0D1 /* User+CoreDataProperties.swift */,
+				236DCAFA2954791C00C2C0D1 /* Teacher+CoreDataClass.swift */,
+				236DCAFB2954791C00C2C0D1 /* Teacher+CoreDataProperties.swift */,
+				236DCAFC2954791C00C2C0D1 /* Group+CoreDataClass.swift */,
+				236DCAFD2954791C00C2C0D1 /* Group+CoreDataProperties.swift */,
+				236DCAFE2954791C00C2C0D1 /* Student+CoreDataClass.swift */,
+				236DCAFF2954791C00C2C0D1 /* Student+CoreDataProperties.swift */,
+				236DCAE529546CDB00C2C0D1 /* CoreDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		23B64D0D2951E27E00ED81B7 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +152,7 @@
 				23B64D322951E28200ED81B7 /* dyplomaTests */,
 				23B64D3C2951E28200ED81B7 /* dyplomaUITests */,
 				23B64D172951E27E00ED81B7 /* Products */,
+				236DCAC12952052E00C2C0D1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,14 +169,18 @@
 		23B64D182951E27E00ED81B7 /* dyploma */ = {
 			isa = PBXGroup;
 			children = (
+				236DCAD42953265D00C2C0D1 /* CoreData */,
+				236DCAB82951F3D400C2C0D1 /* teacher */,
+				23B64D4C2951E4B700ED81B7 /* Login */,
 				23B64D192951E27E00ED81B7 /* AppDelegate.swift */,
 				23B64D1B2951E27E00ED81B7 /* SceneDelegate.swift */,
-				23B64D1D2951E27E00ED81B7 /* ViewController.swift */,
-				23B64D1F2951E27E00ED81B7 /* Main.storyboard */,
 				23B64D252951E28100ED81B7 /* Assets.xcassets */,
 				23B64D272951E28100ED81B7 /* LaunchScreen.storyboard */,
 				23B64D2A2951E28100ED81B7 /* Info.plist */,
 				23B64D222951E27E00ED81B7 /* dyploma.xcdatamodeld */,
+				23B64D4F2951E63100ED81B7 /* NavigationController.swift */,
+				23B64D512951E66A00ED81B7 /* KeyboardHelper.swift */,
+				236DCAB62951ED3100C2C0D1 /* Students.swift */,
 			);
 			path = dyploma;
 			sourceTree = "<group>";
@@ -128,6 +200,15 @@
 				23B64D3F2951E28200ED81B7 /* dyplomaUITestsLaunchTests.swift */,
 			);
 			path = dyplomaUITests;
+			sourceTree = "<group>";
+		};
+		23B64D4C2951E4B700ED81B7 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				23B64D1D2951E27E00ED81B7 /* LoginViewController.swift */,
+				23B64D4D2951E5B700ED81B7 /* Login.storyboard */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,9 +315,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				236DCAF72954738F00C2C0D1 /* dyploma.xcdatamodeld in Resources */,
 				23B64D292951E28100ED81B7 /* LaunchScreen.storyboard in Resources */,
+				236DCABA2951F3F000C2C0D1 /* Teacher.storyboard in Resources */,
 				23B64D262951E28100ED81B7 /* Assets.xcassets in Resources */,
-				23B64D212951E27E00ED81B7 /* Main.storyboard in Resources */,
+				23B64D4E2951E5B700ED81B7 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,9 +344,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23B64D1E2951E27E00ED81B7 /* ViewController.swift in Sources */,
+				23B64D522951E66A00ED81B7 /* KeyboardHelper.swift in Sources */,
+				236DCB062954791C00C2C0D1 /* Student+CoreDataClass.swift in Sources */,
+				236DCABE2951F48200C2C0D1 /* TeacherViewController.swift in Sources */,
+				23B64D1E2951E27E00ED81B7 /* LoginViewController.swift in Sources */,
+				236DCB042954791C00C2C0D1 /* Group+CoreDataClass.swift in Sources */,
+				236DCAC02951FB8B00C2C0D1 /* GroupCollectionViewCell.swift in Sources */,
+				236DCB002954791C00C2C0D1 /* User+CoreDataClass.swift in Sources */,
+				236DCB072954791C00C2C0D1 /* Student+CoreDataProperties.swift in Sources */,
+				236DCAE629546CDB00C2C0D1 /* CoreDataManager.swift in Sources */,
+				236DCB052954791C00C2C0D1 /* Group+CoreDataProperties.swift in Sources */,
 				23B64D1A2951E27E00ED81B7 /* AppDelegate.swift in Sources */,
-				23B64D242951E27E00ED81B7 /* dyploma.xcdatamodeld in Sources */,
+				236DCB012954791C00C2C0D1 /* User+CoreDataProperties.swift in Sources */,
+				236DCAB72951ED3100C2C0D1 /* Students.swift in Sources */,
+				236DCB032954791C00C2C0D1 /* Teacher+CoreDataProperties.swift in Sources */,
+				23B64D502951E63100ED81B7 /* NavigationController.swift in Sources */,
+				236DCB022954791C00C2C0D1 /* Teacher+CoreDataClass.swift in Sources */,
 				23B64D1C2951E27E00ED81B7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,14 +397,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		23B64D1F2951E27E00ED81B7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				23B64D202951E27E00ED81B7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		23B64D272951E28100ED81B7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -370,7 +458,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -424,7 +512,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -444,9 +532,9 @@
 				DEVELOPMENT_TEAM = VL3FXAW254;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = dyploma/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -472,9 +560,9 @@
 				DEVELOPMENT_TEAM = VL3FXAW254;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = dyploma/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
