@@ -177,6 +177,27 @@ extension CoreDataManager{
         return (try? viewContext.fetch(request)) ?? []
     }
     
+    func createLecture(theme : String, matherials : String?, status : LectureState, group : Group, teacher : Teacher, date : Date)->Lecture{
+        let lecture = Lecture(context: viewContext)
+        lecture.id = UUID()
+        lecture.theme = theme
+        lecture.matherial = matherials
+        lecture.status = Int16(status.rawValue)
+        lecture.group = group
+        lecture.teacher = teacher
+        lecture.date = date
+        save()
+        return lecture
+    }
+    
+    func fetchLectures()->[Lecture]{
+        let request : NSFetchRequest<Lecture> = Lecture.fetchRequest()
+        request.returnsObjectsAsFaults = false
+        return (try? viewContext.fetch(request)) ?? []
+    }
+    
+    
+    
 //    func add(students : [Student], to group : Group){
 //
 //    }

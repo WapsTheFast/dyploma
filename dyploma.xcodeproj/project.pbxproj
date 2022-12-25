@@ -18,10 +18,18 @@
 		236DCB012954791C00C2C0D1 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCAF92954791C00C2C0D1 /* User+CoreDataProperties.swift */; };
 		236DCB022954791C00C2C0D1 /* Teacher+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCAFA2954791C00C2C0D1 /* Teacher+CoreDataClass.swift */; };
 		236DCB032954791C00C2C0D1 /* Teacher+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCAFB2954791C00C2C0D1 /* Teacher+CoreDataProperties.swift */; };
-		236DCB042954791C00C2C0D1 /* Group+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCAFC2954791C00C2C0D1 /* Group+CoreDataClass.swift */; };
-		236DCB052954791C00C2C0D1 /* Group+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCAFD2954791C00C2C0D1 /* Group+CoreDataProperties.swift */; };
 		236DCB062954791C00C2C0D1 /* Student+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCAFE2954791C00C2C0D1 /* Student+CoreDataClass.swift */; };
 		236DCB072954791C00C2C0D1 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCAFF2954791C00C2C0D1 /* Student+CoreDataProperties.swift */; };
+		236DCB0C2955F69400C2C0D1 /* Group.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236DCB0B2955F69400C2C0D1 /* Group.storyboard */; };
+		236DCB0E2955FC1600C2C0D1 /* GroupTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCB0D2955FC1600C2C0D1 /* GroupTabBarViewController.swift */; };
+		236DCB102955FE9A00C2C0D1 /* TeacherLectionGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCB0F2955FE9A00C2C0D1 /* TeacherLectionGroupTableViewController.swift */; };
+		236DCB122955FF3F00C2C0D1 /* TeacherStudentListGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCB112955FF3F00C2C0D1 /* TeacherStudentListGroupTableViewController.swift */; };
+		236DCB142956002B00C2C0D1 /* TeacherSettingsGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCB132956002B00C2C0D1 /* TeacherSettingsGroupTableViewController.swift */; };
+		236DCB162956432000C2C0D1 /* GroupTabBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCB152956432000C2C0D1 /* GroupTabBarProtocol.swift */; };
+		236DCB1929589C8F00C2C0D1 /* Group+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCB1729589C8F00C2C0D1 /* Group+CoreDataClass.swift */; };
+		236DCB1A29589C8F00C2C0D1 /* Group+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCB1829589C8F00C2C0D1 /* Group+CoreDataProperties.swift */; };
+		236DCB212958CD3700C2C0D1 /* Lecture+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCB1F2958CD3700C2C0D1 /* Lecture+CoreDataClass.swift */; };
+		236DCB222958CD3700C2C0D1 /* Lecture+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCB202958CD3700C2C0D1 /* Lecture+CoreDataProperties.swift */; };
 		23B64D1A2951E27E00ED81B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B64D192951E27E00ED81B7 /* AppDelegate.swift */; };
 		23B64D1C2951E27E00ED81B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B64D1B2951E27E00ED81B7 /* SceneDelegate.swift */; };
 		23B64D1E2951E27E00ED81B7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B64D1D2951E27E00ED81B7 /* LoginViewController.swift */; };
@@ -63,10 +71,18 @@
 		236DCAF92954791C00C2C0D1 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		236DCAFA2954791C00C2C0D1 /* Teacher+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Teacher+CoreDataClass.swift"; sourceTree = "<group>"; };
 		236DCAFB2954791C00C2C0D1 /* Teacher+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Teacher+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		236DCAFC2954791C00C2C0D1 /* Group+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataClass.swift"; sourceTree = "<group>"; };
-		236DCAFD2954791C00C2C0D1 /* Group+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		236DCAFE2954791C00C2C0D1 /* Student+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataClass.swift"; sourceTree = "<group>"; };
 		236DCAFF2954791C00C2C0D1 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		236DCB0B2955F69400C2C0D1 /* Group.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Group.storyboard; sourceTree = "<group>"; };
+		236DCB0D2955FC1600C2C0D1 /* GroupTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTabBarViewController.swift; sourceTree = "<group>"; };
+		236DCB0F2955FE9A00C2C0D1 /* TeacherLectionGroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherLectionGroupTableViewController.swift; sourceTree = "<group>"; };
+		236DCB112955FF3F00C2C0D1 /* TeacherStudentListGroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherStudentListGroupTableViewController.swift; sourceTree = "<group>"; };
+		236DCB132956002B00C2C0D1 /* TeacherSettingsGroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherSettingsGroupTableViewController.swift; sourceTree = "<group>"; };
+		236DCB152956432000C2C0D1 /* GroupTabBarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTabBarProtocol.swift; sourceTree = "<group>"; };
+		236DCB1729589C8F00C2C0D1 /* Group+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		236DCB1829589C8F00C2C0D1 /* Group+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		236DCB1F2958CD3700C2C0D1 /* Lecture+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lecture+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		236DCB202958CD3700C2C0D1 /* Lecture+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lecture+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		23B64D162951E27E00ED81B7 /* dyploma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dyploma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23B64D192951E27E00ED81B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23B64D1B2951E27E00ED81B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,14 +127,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		236DCAB82951F3D400C2C0D1 /* teacher */ = {
+		236DCAB82951F3D400C2C0D1 /* Teacher */ = {
 			isa = PBXGroup;
 			children = (
 				236DCAB92951F3F000C2C0D1 /* Teacher.storyboard */,
 				236DCABD2951F48100C2C0D1 /* TeacherViewController.swift */,
 				236DCABF2951FB8B00C2C0D1 /* GroupCollectionViewCell.swift */,
 			);
-			path = teacher;
+			path = Teacher;
 			sourceTree = "<group>";
 		};
 		236DCAC12952052E00C2C0D1 /* Frameworks */ = {
@@ -132,17 +148,54 @@
 		236DCAD42953265D00C2C0D1 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				236DCB1F2958CD3700C2C0D1 /* Lecture+CoreDataClass.swift */,
+				236DCB202958CD3700C2C0D1 /* Lecture+CoreDataProperties.swift */,
+				236DCB1729589C8F00C2C0D1 /* Group+CoreDataClass.swift */,
+				236DCB1829589C8F00C2C0D1 /* Group+CoreDataProperties.swift */,
+				23B64D222951E27E00ED81B7 /* dyploma.xcdatamodeld */,
 				236DCAF82954791C00C2C0D1 /* User+CoreDataClass.swift */,
 				236DCAF92954791C00C2C0D1 /* User+CoreDataProperties.swift */,
 				236DCAFA2954791C00C2C0D1 /* Teacher+CoreDataClass.swift */,
 				236DCAFB2954791C00C2C0D1 /* Teacher+CoreDataProperties.swift */,
-				236DCAFC2954791C00C2C0D1 /* Group+CoreDataClass.swift */,
-				236DCAFD2954791C00C2C0D1 /* Group+CoreDataProperties.swift */,
 				236DCAFE2954791C00C2C0D1 /* Student+CoreDataClass.swift */,
 				236DCAFF2954791C00C2C0D1 /* Student+CoreDataProperties.swift */,
 				236DCAE529546CDB00C2C0D1 /* CoreDataManager.swift */,
+				236DCAB62951ED3100C2C0D1 /* Students.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		236DCB08295505D400C2C0D1 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				23B64D192951E27E00ED81B7 /* AppDelegate.swift */,
+				23B64D1B2951E27E00ED81B7 /* SceneDelegate.swift */,
+				23B64D252951E28100ED81B7 /* Assets.xcassets */,
+				23B64D272951E28100ED81B7 /* LaunchScreen.storyboard */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		236DCB092955060400C2C0D1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				23B64D4F2951E63100ED81B7 /* NavigationController.swift */,
+				23B64D512951E66A00ED81B7 /* KeyboardHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		236DCB0A2955F67E00C2C0D1 /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				236DCB0B2955F69400C2C0D1 /* Group.storyboard */,
+				236DCB0D2955FC1600C2C0D1 /* GroupTabBarViewController.swift */,
+				236DCB0F2955FE9A00C2C0D1 /* TeacherLectionGroupTableViewController.swift */,
+				236DCB112955FF3F00C2C0D1 /* TeacherStudentListGroupTableViewController.swift */,
+				236DCB132956002B00C2C0D1 /* TeacherSettingsGroupTableViewController.swift */,
+				236DCB152956432000C2C0D1 /* GroupTabBarProtocol.swift */,
+			);
+			path = Group;
 			sourceTree = "<group>";
 		};
 		23B64D0D2951E27E00ED81B7 = {
@@ -169,18 +222,13 @@
 		23B64D182951E27E00ED81B7 /* dyploma */ = {
 			isa = PBXGroup;
 			children = (
-				236DCAD42953265D00C2C0D1 /* CoreData */,
-				236DCAB82951F3D400C2C0D1 /* teacher */,
-				23B64D4C2951E4B700ED81B7 /* Login */,
-				23B64D192951E27E00ED81B7 /* AppDelegate.swift */,
-				23B64D1B2951E27E00ED81B7 /* SceneDelegate.swift */,
-				23B64D252951E28100ED81B7 /* Assets.xcassets */,
-				23B64D272951E28100ED81B7 /* LaunchScreen.storyboard */,
+				236DCB0A2955F67E00C2C0D1 /* Group */,
 				23B64D2A2951E28100ED81B7 /* Info.plist */,
-				23B64D222951E27E00ED81B7 /* dyploma.xcdatamodeld */,
-				23B64D4F2951E63100ED81B7 /* NavigationController.swift */,
-				23B64D512951E66A00ED81B7 /* KeyboardHelper.swift */,
-				236DCAB62951ED3100C2C0D1 /* Students.swift */,
+				23B64D4C2951E4B700ED81B7 /* Login */,
+				236DCAB82951F3D400C2C0D1 /* Teacher */,
+				236DCB092955060400C2C0D1 /* Helpers */,
+				236DCAD42953265D00C2C0D1 /* CoreData */,
+				236DCB08295505D400C2C0D1 /* Base */,
 			);
 			path = dyploma;
 			sourceTree = "<group>";
@@ -315,6 +363,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				236DCB0C2955F69400C2C0D1 /* Group.storyboard in Resources */,
 				236DCAF72954738F00C2C0D1 /* dyploma.xcdatamodeld in Resources */,
 				23B64D292951E28100ED81B7 /* LaunchScreen.storyboard in Resources */,
 				236DCABA2951F3F000C2C0D1 /* Teacher.storyboard in Resources */,
@@ -345,17 +394,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				23B64D522951E66A00ED81B7 /* KeyboardHelper.swift in Sources */,
+				236DCB1A29589C8F00C2C0D1 /* Group+CoreDataProperties.swift in Sources */,
+				236DCB162956432000C2C0D1 /* GroupTabBarProtocol.swift in Sources */,
 				236DCB062954791C00C2C0D1 /* Student+CoreDataClass.swift in Sources */,
+				236DCB222958CD3700C2C0D1 /* Lecture+CoreDataProperties.swift in Sources */,
+				236DCB122955FF3F00C2C0D1 /* TeacherStudentListGroupTableViewController.swift in Sources */,
 				236DCABE2951F48200C2C0D1 /* TeacherViewController.swift in Sources */,
+				236DCB102955FE9A00C2C0D1 /* TeacherLectionGroupTableViewController.swift in Sources */,
 				23B64D1E2951E27E00ED81B7 /* LoginViewController.swift in Sources */,
-				236DCB042954791C00C2C0D1 /* Group+CoreDataClass.swift in Sources */,
 				236DCAC02951FB8B00C2C0D1 /* GroupCollectionViewCell.swift in Sources */,
+				236DCB0E2955FC1600C2C0D1 /* GroupTabBarViewController.swift in Sources */,
+				236DCB1929589C8F00C2C0D1 /* Group+CoreDataClass.swift in Sources */,
 				236DCB002954791C00C2C0D1 /* User+CoreDataClass.swift in Sources */,
 				236DCB072954791C00C2C0D1 /* Student+CoreDataProperties.swift in Sources */,
+				236DCB212958CD3700C2C0D1 /* Lecture+CoreDataClass.swift in Sources */,
 				236DCAE629546CDB00C2C0D1 /* CoreDataManager.swift in Sources */,
-				236DCB052954791C00C2C0D1 /* Group+CoreDataProperties.swift in Sources */,
 				23B64D1A2951E27E00ED81B7 /* AppDelegate.swift in Sources */,
 				236DCB012954791C00C2C0D1 /* User+CoreDataProperties.swift in Sources */,
+				236DCB142956002B00C2C0D1 /* TeacherSettingsGroupTableViewController.swift in Sources */,
 				236DCAB72951ED3100C2C0D1 /* Students.swift in Sources */,
 				236DCB032954791C00C2C0D1 /* Teacher+CoreDataProperties.swift in Sources */,
 				23B64D502951E63100ED81B7 /* NavigationController.swift in Sources */,

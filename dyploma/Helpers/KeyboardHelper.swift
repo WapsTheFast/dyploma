@@ -54,3 +54,24 @@ class KeyboardHelper{
     }
     
 }
+
+//let keyboardHelper : KeyboardHelper
+
+//viewDidLoad(){
+    //keyboardSetup()
+
+//func keyboardSetup(){
+//    keyboardHelper = KeyboardHelper{ [weak self] (animation,keyboardSize,duration) in
+//        UIView.animate(withDuration: duration){[weak self] in
+//            guard let self = self else { return }
+//            switch animation{
+//            case .willShow:
+//                self.registerViewBottomConstraint.constant = -keyboardSize.height
+//            case .willHide:
+//                self.registerViewBottomConstraint.constant = -100
+//
+//            }
+//            self.view.layoutIfNeeded()
+//        }
+//    }
+//}

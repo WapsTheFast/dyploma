@@ -52,6 +52,15 @@ class TeacherViewController: UICollectionViewController {
     
         return cell
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Group", bundle: nil)
+        let vc = storyboard.instantiateInitialViewController() as? GroupTabBarViewController
+        vc?.group = groups[indexPath.row]
+        vc?.teacher = teacherInfo
+        
+        self.pushToNavigationController(vc!)
+    }
 
 }
 
