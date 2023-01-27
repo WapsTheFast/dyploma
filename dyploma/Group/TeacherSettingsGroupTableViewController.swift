@@ -23,28 +23,12 @@ class TeacherSettingsGroupTableViewController: UITableViewController, GroupTabBa
     
     @IBOutlet weak var createInviteCodeButton: UIButton!
     
-        
+    @IBOutlet weak var groupColorWell: UIColorWell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.navigationController?.isNavigationBarHidden = false
-        //self.navigationItem.title = group.name
-        //self.present(UIAlertController(title: group.name, message: group.course, preferredStyle: .actionSheet), animated: true)
-        nameLabel.text = group.name
-        courseLabel.text = group.course
-        if let inviteCode = group.inviteCode as Int64?{
-            inviteCodeLabel.text = String(describing: inviteCode)
-        }else{
-            inviteCodeLabel.text = "not created"
-        }
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        configureSettings()
     }
-
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -56,80 +40,76 @@ class TeacherSettingsGroupTableViewController: UITableViewController, GroupTabBa
         case 0:
             return 3
         case 1:
-            return 2
+            return 1
         default:
             return 0
         }
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section{
+        case 0:
+            switch indexPath.row{
+            case 0:
+                let alertName = UIAlertController(title: "name", message: "name", preferredStyle: .alert)
+                alertName.addAction(UIAlertAction(title: "ok", style: .cancel))
+                self.present(alertName, animated: true)
+            case 1:
+                let alertCourse = UIAlertController(title: "course", message: "course", preferredStyle: .alert)
+                alertCourse.addAction(UIAlertAction(title: "ok", style: .cancel))
+                self.present(alertCourse, animated: true)
+            case 2:
+                break
+            default:
+                break
+            }
+        case 1:
+            switch indexPath.row{
+            case 0:
+                createInviteCodeButtonAction(AnyObject.self)
+            default:
+                break
+            }
+        default:
+            break
+        }
+//        let alert = UIAlertController(title: String(describing: indexPath), message: "section \(indexPath.section) row \(indexPath.row)", preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: "ok", style: .cancel))
+//        self.present(alert , animated: true)
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+    
     
     func createInviteCode(group : Group){
         group.inviteCode = Int64.random(in: 100000...999999)
         CoreDataManager.shared.save()
-        
     }
-
 }
 
 extension TeacherSettingsGroupTableViewController{
-    @IBAction func createInviteCodeButtonAction(_ sender : Any){
+    func createInviteCodeButtonAction(_ sender : Any){
         createInviteCode(group: self.group)
         inviteCodeLabel.text = group.inviteCode.description
     }
+    
+    @objc func colorWellChanged(_ sender: Any) {
+        self.group.color = groupColorWell.selectedColor
+        CoreDataManager.shared.save()
+        }
+    
+    func configureSettings(){
+        nameLabel.text = group.name
+        courseLabel.text = group.course
+        if let inviteCode = group.inviteCode as Int64?{
+            inviteCodeLabel.text = String(describing: inviteCode)
+        }
+//        else{
+//            inviteCodeLabel.text = "not created"
+//        }
+        groupColorWell.selectedColor = group.color
+        groupColorWell.addTarget(self, action: #selector(colorWellChanged(_ : )), for: .valueChanged)
+    }
+    
 }
 
 

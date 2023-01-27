@@ -2,7 +2,7 @@
 //  Teacher+CoreDataProperties.swift
 //  dyploma
 //
-//  Created by Андрэй Целігузаў on 22.12.22.
+//  Created by Андрэй Целігузаў on 23.01.23.
 //
 //
 
@@ -17,8 +17,9 @@ extension Teacher {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var user: User?
     @NSManaged public var groups: NSSet?
+    @NSManaged public var user: User?
+    @NSManaged public var lectures: Lecture?
 
 }
 
@@ -36,5 +37,9 @@ extension Teacher {
 
     @objc(removeGroups:)
     @NSManaged public func removeFromGroups(_ values: NSSet)
+
+}
+
+extension Teacher : Identifiable {
 
 }

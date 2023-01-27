@@ -148,11 +148,6 @@ extension CoreDataManager{
             }
             user.teachers = teacherGroup
         }
-//        if let user = group as Group?{
-//            let teacherGroup = user.teachers?.mutableCopy() as? NSSet
-//            teacherGroup?.addingObjects(from: teachers)
-//            user.teachers = teacherGroup
-//        }
         if let user = group as Group?{
             let studentGroup = user.students?.mutableCopy() as? NSSet
             studentGroup?.addingObjects(from: teachers)
@@ -177,12 +172,12 @@ extension CoreDataManager{
         return (try? viewContext.fetch(request)) ?? []
     }
     
-    func createLecture(theme : String, matherials : String?, status : LectureState, group : Group, teacher : Teacher, date : Date)->Lecture{
+    func createLecture(theme : String, matherials : String?, state : LectureState, group : Group, teacher : Teacher, date : Date)->Lecture{
         let lecture = Lecture(context: viewContext)
         lecture.id = UUID()
         lecture.theme = theme
         lecture.matherial = matherials
-        lecture.status = Int16(status.rawValue)
+        lecture.state = Int16(state.rawValue)
         lecture.group = group
         lecture.teacher = teacher
         lecture.date = date
