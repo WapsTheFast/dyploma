@@ -22,22 +22,18 @@ class StudentLecturesTableViewController: UITableViewController {
     
     override func loadView() {
         super.loadView()
+        updateLecturesForGroup()
     }
     
     func updateLecturesForGroup(){
         lecturesForGroup = lectures.filter{ $0.group == student.group }
     }
 
-
-    // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return lecturesForGroup.count
     }
 
@@ -48,58 +44,31 @@ class StudentLecturesTableViewController: UITableViewController {
         let date = cell.viewWithTag(2) as! UILabel
         
         theme.text = lecturesForGroup[indexPath.row].theme
-        date.text = String(describing: lecturesForGroup[indexPath.row].date!)
+        date.text = lecturesForGroup[indexPath.row].date?.formatted(date: .long, time: .omitted)
+        
+        //print(isStudentBeenOnLecture(with: indexPath))
+        if isStudentBeenOnLecture(with: indexPath){
+            cell.accessoryType = .checkmark
+        }else{
+            cell.accessoryType = .none
+        }
         
         return cell
     }
     
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let alert = UIAlertController(title: "Input lecture code", message: "сюда вводить код лекции шоб отметилось", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        let checkAction = UIAlertAction(title: "Check", style: .default){
+        [unowned self] action  in
+            let codeTextField = alert.textFields![0] as UITextField
+            checkLecture(with : codeTextField.text ?? "",for : indexPath)
+            self.tableView.reloadData()
+        }
+        alert.addAction(checkAction)
+        alert.addTextField()
+        self.present(alert, animated: true)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension StudentLecturesTableViewController{
@@ -107,5 +76,19 @@ extension StudentLecturesTableViewController{
     func configureNavBar(){
         self.navigationController?.isNavigationBarHidden = false
         self.navigationItem.title = student.name
+    }
+    
+    func checkLecture(with code : String, for indexPath : IndexPath){
+        if String(describing: lecturesForGroup[indexPath.row].code) == code{
+            lecturesForGroup[indexPath.row].students = lecturesForGroup[indexPath.row].students?.addingObjects(from: [student!]) as NSSet?
+            CoreDataManager.shared.save()
+        }
+    }
+    
+    func isStudentBeenOnLecture(with indexPath : IndexPath)->Bool{
+        if lecturesForGroup[indexPath.row].students!.contains(student!){
+            return true
+        }
+        return false
     }
 }

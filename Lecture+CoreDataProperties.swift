@@ -2,7 +2,7 @@
 //  Lecture+CoreDataProperties.swift
 //  dyploma
 //
-//  Created by Андрэй Целігузаў on 23.01.23.
+//  Created by Андрэй Целігузаў on 16.02.23.
 //
 //
 
@@ -21,9 +21,27 @@ extension Lecture {
     @NSManaged public var matherial: String?
     @NSManaged public var state: Int16
     @NSManaged public var theme: String?
+    @NSManaged public var code: Int64
     @NSManaged public var group: Group?
-    @NSManaged public var students: Student?
+    @NSManaged public var students: NSSet?
     @NSManaged public var teacher: Teacher?
+
+}
+
+// MARK: Generated accessors for students
+extension Lecture {
+
+    @objc(addStudentsObject:)
+    @NSManaged public func addToStudents(_ value: Student)
+
+    @objc(removeStudentsObject:)
+    @NSManaged public func removeFromStudents(_ value: Student)
+
+    @objc(addStudents:)
+    @NSManaged public func addToStudents(_ values: NSSet)
+
+    @objc(removeStudents:)
+    @NSManaged public func removeFromStudents(_ values: NSSet)
 
 }
 

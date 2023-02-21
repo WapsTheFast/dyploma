@@ -2,7 +2,7 @@
 //  Student+CoreDataClass.swift
 //  dyploma
 //
-//  Created by Андрэй Целігузаў on 23.01.23.
+//  Created by Андрэй Целігузаў on 1.02.23.
 //
 //
 

@@ -29,9 +29,13 @@ class TeacherSettingsGroupTableViewController: UITableViewController, GroupTabBa
         super.viewDidLoad()
         configureSettings()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.delegate.navigationItem.title = ""
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 2
     }
 
@@ -51,8 +55,18 @@ class TeacherSettingsGroupTableViewController: UITableViewController, GroupTabBa
         case 0:
             switch indexPath.row{
             case 0:
-                let alertName = UIAlertController(title: "name", message: "name", preferredStyle: .alert)
-                alertName.addAction(UIAlertAction(title: "ok", style: .cancel))
+                let alertName = UIAlertController(title: "Изменить номер группы", message: "текущий номер группы: \(String(describing: group.name))", preferredStyle: .alert)
+                let saveAction = UIAlertAction(title: "сохранить", style: UIAlertAction.Style.default, handler: { [unowned self] action  in
+                    let nameTextField = alertName.textFields![0] as UITextField
+                    saveGroup(name: nameTextField.text ?? "")
+                    self.tableView.reloadData()
+                })
+                alertName.addTextField(){(textField) in
+                    textField.placeholder = "lecture theme"
+                }
+                let cancelAction = UIAlertAction(title: "Отмена", style: .cancel)
+                alertName.addAction(saveAction)
+                alertName.addAction(cancelAction)
                 self.present(alertName, animated: true)
             case 1:
                 let alertCourse = UIAlertController(title: "course", message: "course", preferredStyle: .alert)
@@ -73,9 +87,6 @@ class TeacherSettingsGroupTableViewController: UITableViewController, GroupTabBa
         default:
             break
         }
-//        let alert = UIAlertController(title: String(describing: indexPath), message: "section \(indexPath.section) row \(indexPath.row)", preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: "ok", style: .cancel))
-//        self.present(alert , animated: true)
     }
     
     
@@ -112,4 +123,9 @@ extension TeacherSettingsGroupTableViewController{
     
 }
 
-
+extension TeacherSettingsGroupTableViewController{
+    func saveGroup(name : String){
+        group.name = name
+        CoreDataManager.shared.save()
+    }
+}

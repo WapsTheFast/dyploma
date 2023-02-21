@@ -75,8 +75,8 @@ class LoginViewController: UIViewController {
         }
         
         rolePopUpButton.menu = UIMenu(children: [
-            UIAction(title: "Student", handler: studentPopUpButtonClosure),
-            UIAction(title: "Teacher", handler: teacherPopUpButtonClosure)
+            UIAction(title: "Учащийся", handler: studentPopUpButtonClosure),
+            UIAction(title: "Преподаватель", handler: teacherPopUpButtonClosure)
         ])
         rolePopUpButton.showsMenuAsPrimaryAction = true
     }
@@ -133,6 +133,7 @@ extension LoginViewController{
                     flag = false
                     students.append(CoreDataManager.shared.createStudent(name: name, login: login, password: password, group: group))
                     CoreDataManager.shared.save()
+                    users = CoreDataManager.shared.fetchUsers()
                     segmentationControl.selectedSegmentIndex = 1
                     segmentControlClick(AnyObject.self)
                 }
@@ -143,10 +144,10 @@ extension LoginViewController{
         else if roleType == .Teacher{
             teachers.append(CoreDataManager.shared.createTeacher(name: name, login: login, password: password, groups: []))
             CoreDataManager.shared.save()
+            users = CoreDataManager.shared.fetchUsers()
             segmentationControl.selectedSegmentIndex = 1
             segmentControlClick(AnyObject.self)
         }
-        //initDataBase()
     }
     
     @IBAction func segmentControlClick(_ sender : Any){

@@ -19,12 +19,17 @@ class TeacherStudentListGroupTableViewController: UITableViewController, GroupTa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureNavBar()
+        
     }
     
     override func loadView() {
         super.loadView()
         setupStudents()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureNavBar()
     }
     
     func setupStudents(){
@@ -33,12 +38,10 @@ class TeacherStudentListGroupTableViewController: UITableViewController, GroupTa
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return group.students?.count ?? 0
     }
 
@@ -58,6 +61,6 @@ class TeacherStudentListGroupTableViewController: UITableViewController, GroupTa
 
 extension TeacherStudentListGroupTableViewController{
     func configureNavBar(){
-        self.delegate.navigationItem.title = ""
+        self.delegate.navigationItem.title = String(describing:group.students?.count ?? 0)
     }
 }

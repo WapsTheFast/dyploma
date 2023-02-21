@@ -26,13 +26,16 @@ class TeacherLectionGroupTableViewController: UITableViewController, GroupTabBar
         updateLecturesForGroup()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.delegate.navigationItem.title = group.name 
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return lecturesForGroup.count
     }
     
@@ -52,9 +55,16 @@ class TeacherLectionGroupTableViewController: UITableViewController, GroupTabBar
         let date = cell.viewWithTag(2) as! UILabel
         
         theme.text = lecturesForGroup[indexPath.row].theme
-        date.text = String(describing: lecturesForGroup[indexPath.row].date!)
+        date.text = lecturesForGroup[indexPath.row].date?.formatted(date: .long, time: .omitted)
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "LectureTeacher", bundle: nil)
+        let vc = storyboard.instantiateInitialViewController() as! LectureTeacherTableViewController
+        vc.lecture = lecturesForGroup[indexPath.row]
+        self.pushToNavigationController(vc)
     }
     
 }

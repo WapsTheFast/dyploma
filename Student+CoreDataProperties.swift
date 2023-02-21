@@ -2,7 +2,7 @@
 //  Student+CoreDataProperties.swift
 //  dyploma
 //
-//  Created by Андрэй Целігузаў on 23.01.23.
+//  Created by Андрэй Целігузаў on 1.02.23.
 //
 //
 
@@ -18,8 +18,8 @@ extension Student {
 
     @NSManaged public var name: String?
     @NSManaged public var group: Group?
-    @NSManaged public var user: User?
     @NSManaged public var lectures: NSSet?
+    @NSManaged public var user: User?
 
 }
 
