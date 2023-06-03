@@ -11,7 +11,7 @@ class TeacherSettingsGroupTableViewController: UITableViewController, GroupTabBa
     
     var group : Group!
     
-    var teacher : Teacher!
+    var teacher : User!
     
     var delegate: GroupTabBarViewController!
 
@@ -62,15 +62,25 @@ class TeacherSettingsGroupTableViewController: UITableViewController, GroupTabBa
                     self.tableView.reloadData()
                 })
                 alertName.addTextField(){(textField) in
-                    textField.placeholder = "lecture theme"
+                    textField.placeholder = "новый номер группы"
                 }
                 let cancelAction = UIAlertAction(title: "Отмена", style: .cancel)
                 alertName.addAction(saveAction)
                 alertName.addAction(cancelAction)
                 self.present(alertName, animated: true)
             case 1:
-                let alertCourse = UIAlertController(title: "course", message: "course", preferredStyle: .alert)
-                alertCourse.addAction(UIAlertAction(title: "ok", style: .cancel))
+                let alertCourse = UIAlertController(title: "Изменить курс группы", message: "текущий курс группы: \(String(describing: group.course))", preferredStyle: .alert)
+                let saveAction = UIAlertAction(title: "сохранить", style: UIAlertAction.Style.default, handler: { [unowned self] action  in
+                    let courseTextField = alertCourse.textFields![0] as UITextField
+                    saveGroup(name: courseTextField.text ?? "")
+                    self.tableView.reloadData()
+                })
+                alertCourse.addTextField(){(textField) in
+                    textField.placeholder = "новый номер курса"
+                }
+                let cancelAction = UIAlertAction(title: "Отмена", style: .cancel)
+                alertCourse.addAction(saveAction)
+                alertCourse.addAction(cancelAction)
                 self.present(alertCourse, animated: true)
             case 2:
                 break
@@ -92,32 +102,24 @@ class TeacherSettingsGroupTableViewController: UITableViewController, GroupTabBa
     
     
     func createInviteCode(group : Group){
-        group.inviteCode = Int64.random(in: 100000...999999)
-        CoreDataManager.shared.save()
+        
     }
 }
 
 extension TeacherSettingsGroupTableViewController{
     func createInviteCodeButtonAction(_ sender : Any){
         createInviteCode(group: self.group)
-        inviteCodeLabel.text = group.inviteCode.description
     }
     
     @objc func colorWellChanged(_ sender: Any) {
-        self.group.color = groupColorWell.selectedColor
-        CoreDataManager.shared.save()
+        self.group.color = groupColorWell.selectedColor?.htmlRGBA
         }
     
     func configureSettings(){
         nameLabel.text = group.name
         courseLabel.text = group.course
-        if let inviteCode = group.inviteCode as Int64?{
-            inviteCodeLabel.text = String(describing: inviteCode)
-        }
-//        else{
-//            inviteCodeLabel.text = "not created"
-//        }
-        groupColorWell.selectedColor = group.color
+        inviteCodeLabel.text = String(describing: group.inviteCode)
+        groupColorWell.selectedColor = UIColor(hex: group.color ?? "")
         groupColorWell.addTarget(self, action: #selector(colorWellChanged(_ : )), for: .valueChanged)
     }
     
@@ -126,6 +128,5 @@ extension TeacherSettingsGroupTableViewController{
 extension TeacherSettingsGroupTableViewController{
     func saveGroup(name : String){
         group.name = name
-        CoreDataManager.shared.save()
     }
 }

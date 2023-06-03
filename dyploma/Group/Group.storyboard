@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RQz-QF-8xV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RQz-QF-8xV">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -43,7 +44,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gED-iV-BWA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1098" y="-210"/>
+            <point key="canvasLocation" x="1185" y="-132"/>
         </scene>
         <!--lectures-->
         <scene sceneID="yWq-HN-sA7">
@@ -53,29 +54,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" placeholder="поиск по теме" showsCancelButton="YES" id="6Aa-jV-9NF">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            <scopeButtonTitles>
+                                <string>Title</string>
+                                <string>Title</string>
+                            </scopeButtonTitles>
+                            <connections>
+                                <outlet property="delegate" destination="blR-Ef-VdS" id="Abl-H8-941"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="teacherLecture" textLabel="kFz-r3-kNk" detailTextLabel="eXZ-nF-7hz" style="IBUITableViewCellStyleSubtitle" id="loX-Yu-Ru1">
-                                <rect key="frame" x="0.0" y="50" width="393" height="60.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="teacherLecture" id="loX-Yu-Ru1">
+                                <rect key="frame" x="0.0" y="106" width="393" height="46.333332061767578"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="loX-Yu-Ru1" id="MEa-Cd-be7">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="60.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="46.333332061767578"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" tag="1" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Тема лекции" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kFz-r3-kNk">
-                                            <rect key="frame" x="20" y="8.6666666666666661" width="108" height="21.666666666666668"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" tag="2" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Дата" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eXZ-nF-7hz">
-                                            <rect key="frame" x="19.999999999999996" y="33.666666666666671" width="32.666666666666664" height="17"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="233" translatesAutoresizingMaskIntoConstraints="NO" id="eaM-i9-KUh">
+                                            <rect key="frame" x="10" y="5" width="373" height="36.333333333333336"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="dm0-j9-8kd">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50.333333333333336" height="36.333333333333336"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pz-lq-lGZ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50.333333333333336" height="19.666666666666668"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRE-iP-blG">
+                                                            <rect key="frame" x="0.0" y="20.666666666666668" width="28.666666666666668" height="15.666666666666668"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="stat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFz-yh-OUs">
+                                                    <rect key="frame" x="344" y="0.0" width="29" height="36.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="eaM-i9-KUh" firstAttribute="top" secondItem="MEa-Cd-be7" secondAttribute="top" constant="5" id="GHD-dQ-OEk"/>
+                                        <constraint firstItem="eaM-i9-KUh" firstAttribute="leading" secondItem="MEa-Cd-be7" secondAttribute="leading" constant="10" id="Gqx-0J-FZ2"/>
+                                        <constraint firstAttribute="bottom" secondItem="eaM-i9-KUh" secondAttribute="bottom" constant="5" id="wI2-SH-WG7"/>
+                                        <constraint firstAttribute="trailing" secondItem="eaM-i9-KUh" secondAttribute="trailing" constant="10" id="wq5-ut-Yag"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -88,10 +121,13 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="lectures" id="wjC-vm-Tqj"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="searchBar" destination="6Aa-jV-9NF" id="x2E-dr-V2R"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pKb-8Y-1UP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="456" y="-627"/>
+            <point key="canvasLocation" x="456" y="-508"/>
         </scene>
         <!--Group Tab Bar View Controller-->
         <scene sceneID="kdd-a4-0HM">
@@ -112,7 +148,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9eb-BD-AN4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationItem title="Title" id="Z7a-HR-wcM"/>
             </objects>
-            <point key="canvasLocation" x="-283" y="-132"/>
+            <point key="canvasLocation" x="-338" y="-132"/>
         </scene>
         <!--настройки-->
         <scene sceneID="zyx-fg-Uzy">
@@ -240,7 +276,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9je-9q-nMb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="436" y="309"/>
+            <point key="canvasLocation" x="456" y="227"/>
         </scene>
     </scenes>
     <resources>

@@ -7,18 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		232294C52A2A941200A8BC90 /* lectureRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232294C42A2A941200A8BC90 /* lectureRequest.swift */; };
+		2351859729AE8B6A00277D21 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351859629AE8B6A00277D21 /* HttpClient.swift */; };
+		2351859929AE946B00277D21 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351859829AE946B00277D21 /* Constants.swift */; };
+		235185A129AED1AA00277D21 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235185A029AED1AA00277D21 /* UIColorExtension.swift */; };
 		235CFF6B299A351E009EDC1B /* LectureTeacher.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235CFF6A299A351E009EDC1B /* LectureTeacher.storyboard */; };
 		235CFF6D299A377D009EDC1B /* LectureTeacherTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235CFF6C299A377D009EDC1B /* LectureTeacherTableViewController.swift */; };
-		235CFF79299A3CC1009EDC1B /* Teacher+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235CFF78299A3CC1009EDC1B /* Teacher+CoreDataProperties.swift */; };
-		235CFF7B299A41D2009EDC1B /* Teacher+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235CFF7A299A41D2009EDC1B /* Teacher+CoreDataClass.swift */; };
-		236C2E93299E209700CDB838 /* Lecture+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236C2E91299E209700CDB838 /* Lecture+CoreDataClass.swift */; };
-		236C2E94299E209700CDB838 /* Lecture+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236C2E92299E209700CDB838 /* Lecture+CoreDataProperties.swift */; };
-		236DCAB72951ED3100C2C0D1 /* Students.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCAB62951ED3100C2C0D1 /* Students.swift */; };
 		236DCABA2951F3F000C2C0D1 /* Teacher.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236DCAB92951F3F000C2C0D1 /* Teacher.storyboard */; };
 		236DCABE2951F48200C2C0D1 /* TeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCABD2951F48100C2C0D1 /* TeacherViewController.swift */; };
 		236DCAC02951FB8B00C2C0D1 /* GroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCABF2951FB8B00C2C0D1 /* GroupCollectionViewCell.swift */; };
 		236DCAC32952052E00C2C0D1 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 236DCAC22952052E00C2C0D1 /* libsqlite3.tbd */; };
-		236DCAE629546CDB00C2C0D1 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCAE529546CDB00C2C0D1 /* CoreDataManager.swift */; };
 		236DCB0C2955F69400C2C0D1 /* Group.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236DCB0B2955F69400C2C0D1 /* Group.storyboard */; };
 		236DCB0E2955FC1600C2C0D1 /* GroupTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCB0D2955FC1600C2C0D1 /* GroupTabBarViewController.swift */; };
 		236DCB102955FE9A00C2C0D1 /* TeacherLectionGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCB0F2955FE9A00C2C0D1 /* TeacherLectionGroupTableViewController.swift */; };
@@ -27,6 +25,18 @@
 		236DCB162956432000C2C0D1 /* GroupTabBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCB152956432000C2C0D1 /* GroupTabBarProtocol.swift */; };
 		236DCB272959E45000C2C0D1 /* Student.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236DCB262959E45000C2C0D1 /* Student.storyboard */; };
 		236DCB292959E67B00C2C0D1 /* StudentLecturesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DCB282959E67B00C2C0D1 /* StudentLecturesTableViewController.swift */; };
+		237C2A5C29F83E5B00175EDE /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237C2A5B29F83E5B00175EDE /* QRCodeViewController.swift */; };
+		237C2A5E29F84B3A00175EDE /* ScannerQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237C2A5D29F84B3A00175EDE /* ScannerQRViewController.swift */; };
+		23B11C9C2A110D5900C42FB3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B11C9B2A110D5900C42FB3 /* User.swift */; };
+		23B11C9E2A110DBF00C42FB3 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B11C9D2A110DBF00C42FB3 /* Group.swift */; };
+		23B11CA02A110DC700C42FB3 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B11C9F2A110DC700C42FB3 /* Lecture.swift */; };
+		23B11CA22A110DDC00C42FB3 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B11CA12A110DDC00C42FB3 /* Questions.swift */; };
+		23B11CA42A110DE500C42FB3 /* Answers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B11CA32A110DE500C42FB3 /* Answers.swift */; };
+		23B11CA62A110E0B00C42FB3 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B11CA52A110E0B00C42FB3 /* Subject.swift */; };
+		23B11CA82A110E1F00C42FB3 /* StudentsOnLecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B11CA72A110E1F00C42FB3 /* StudentsOnLecture.swift */; };
+		23B11CAD2A1115D300C42FB3 /* ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B11CAB2A1115D200C42FB3 /* ErrorPresenter.swift */; };
+		23B11CAE2A1115D300C42FB3 /* ResourceRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B11CAC2A1115D300C42FB3 /* ResourceRequestError.swift */; };
+		23B11CB02A11162C00C42FB3 /* ResourceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B11CAF2A11162C00C42FB3 /* ResourceRequest.swift */; };
 		23B64D1A2951E27E00ED81B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B64D192951E27E00ED81B7 /* AppDelegate.swift */; };
 		23B64D1C2951E27E00ED81B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B64D1B2951E27E00ED81B7 /* SceneDelegate.swift */; };
 		23B64D1E2951E27E00ED81B7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B64D1D2951E27E00ED81B7 /* LoginViewController.swift */; };
@@ -38,13 +48,9 @@
 		23B64D4E2951E5B700ED81B7 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23B64D4D2951E5B700ED81B7 /* Login.storyboard */; };
 		23B64D502951E63100ED81B7 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B64D4F2951E63100ED81B7 /* NavigationController.swift */; };
 		23B64D522951E66A00ED81B7 /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B64D512951E66A00ED81B7 /* KeyboardHelper.swift */; };
-		23C95AAF298A6A9100261FBD /* Student+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C95AA5298A6A9100261FBD /* Student+CoreDataClass.swift */; };
-		23C95AB0298A6A9100261FBD /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C95AA6298A6A9100261FBD /* Student+CoreDataProperties.swift */; };
-		23C95AB1298A6A9100261FBD /* Group+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C95AA7298A6A9100261FBD /* Group+CoreDataClass.swift */; };
-		23C95AB2298A6A9100261FBD /* Group+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C95AA8298A6A9100261FBD /* Group+CoreDataProperties.swift */; };
-		23C95AB3298A6A9100261FBD /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C95AA9298A6A9100261FBD /* User+CoreDataClass.swift */; };
-		23C95AB4298A6A9100261FBD /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C95AAA298A6A9100261FBD /* User+CoreDataProperties.swift */; };
-		23DE6BBB297EB1F90030680F /* dyploma.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 23B64D222951E27E00ED81B7 /* dyploma.xcdatamodeld */; };
+		23C291A62A13B919000D5B04 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C291A52A13B919000D5B04 /* Auth.swift */; };
+		23C291A82A13BCB5000D5B04 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C291A72A13BCB5000D5B04 /* Token.swift */; };
+		23C291AA2A13BF00000D5B04 /* Auth+Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C291A92A13BF00000D5B04 /* Auth+Keychain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,12 +71,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		232294C42A2A941200A8BC90 /* lectureRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lectureRequest.swift; sourceTree = "<group>"; };
+		2351859629AE8B6A00277D21 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		2351859829AE946B00277D21 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		235185A029AED1AA00277D21 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		235185A629AED8AC00277D21 /* dyploma 2.xcdatamodel */ = {isa = PBXFileReference; explicitFileType = wrapper.xcdatamodel; path = "dyploma 2.xcdatamodel"; sourceTree = "<group>"; };
+		235185AF29AEDF2E00277D21 /* DyplomaModel.xcdatamodel */ = {isa = PBXFileReference; explicitFileType = wrapper.xcdatamodel; path = DyplomaModel.xcdatamodel; sourceTree = "<group>"; };
 		235CFF6A299A351E009EDC1B /* LectureTeacher.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LectureTeacher.storyboard; sourceTree = "<group>"; };
 		235CFF6C299A377D009EDC1B /* LectureTeacherTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureTeacherTableViewController.swift; sourceTree = "<group>"; };
-		235CFF78299A3CC1009EDC1B /* Teacher+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Teacher+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		235CFF7A299A41D2009EDC1B /* Teacher+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Teacher+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		236C2E91299E209700CDB838 /* Lecture+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lecture+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		236C2E92299E209700CDB838 /* Lecture+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lecture+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		236DCAB62951ED3100C2C0D1 /* Students.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Students.swift; sourceTree = "<group>"; };
 		236DCAB92951F3F000C2C0D1 /* Teacher.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Teacher.storyboard; sourceTree = "<group>"; };
 		236DCABD2951F48100C2C0D1 /* TeacherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherViewController.swift; sourceTree = "<group>"; };
@@ -85,11 +93,23 @@
 		236DCB152956432000C2C0D1 /* GroupTabBarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTabBarProtocol.swift; sourceTree = "<group>"; };
 		236DCB262959E45000C2C0D1 /* Student.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Student.storyboard; sourceTree = "<group>"; };
 		236DCB282959E67B00C2C0D1 /* StudentLecturesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLecturesTableViewController.swift; sourceTree = "<group>"; };
+		237C2A5B29F83E5B00175EDE /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		237C2A5D29F84B3A00175EDE /* ScannerQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerQRViewController.swift; sourceTree = "<group>"; };
+		23B11C9B2A110D5900C42FB3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		23B11C9D2A110DBF00C42FB3 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		23B11C9F2A110DC700C42FB3 /* Lecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
+		23B11CA12A110DDC00C42FB3 /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
+		23B11CA32A110DE500C42FB3 /* Answers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answers.swift; sourceTree = "<group>"; };
+		23B11CA52A110E0B00C42FB3 /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
+		23B11CA72A110E1F00C42FB3 /* StudentsOnLecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsOnLecture.swift; sourceTree = "<group>"; };
+		23B11CAB2A1115D200C42FB3 /* ErrorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
+		23B11CAC2A1115D300C42FB3 /* ResourceRequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceRequestError.swift; sourceTree = "<group>"; };
+		23B11CAF2A11162C00C42FB3 /* ResourceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceRequest.swift; sourceTree = "<group>"; };
 		23B64D162951E27E00ED81B7 /* dyploma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dyploma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23B64D192951E27E00ED81B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23B64D1B2951E27E00ED81B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		23B64D1D2951E27E00ED81B7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		23B64D232951E27E00ED81B7 /* dyploma.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dyploma.xcdatamodel; sourceTree = "<group>"; };
+		23B64D232951E27E00ED81B7 /* dyploma.xcdatamodel */ = {isa = PBXFileReference; explicitFileType = wrapper.xcdatamodel; path = dyploma.xcdatamodel; sourceTree = "<group>"; };
 		23B64D252951E28100ED81B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23B64D282951E28100ED81B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		23B64D2A2951E28100ED81B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -101,12 +121,9 @@
 		23B64D4D2951E5B700ED81B7 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		23B64D4F2951E63100ED81B7 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		23B64D512951E66A00ED81B7 /* KeyboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHelper.swift; sourceTree = "<group>"; };
-		23C95AA5298A6A9100261FBD /* Student+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		23C95AA6298A6A9100261FBD /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		23C95AA7298A6A9100261FBD /* Group+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		23C95AA8298A6A9100261FBD /* Group+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		23C95AA9298A6A9100261FBD /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		23C95AAA298A6A9100261FBD /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		23C291A52A13B919000D5B04 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		23C291A72A13BCB5000D5B04 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		23C291A92A13BF00000D5B04 /* Auth+Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Auth+Keychain.swift"; sourceTree = "<group>"; };
 		23C95AB7298A832A00261FBD /* dyploma.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = dyploma.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,11 +153,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2351859529AE8B3E00277D21 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				23B11CAC2A1115D300C42FB3 /* ResourceRequestError.swift */,
+				23C291A52A13B919000D5B04 /* Auth.swift */,
+				232294C42A2A941200A8BC90 /* lectureRequest.swift */,
+				23C291A92A13BF00000D5B04 /* Auth+Keychain.swift */,
+				23B11CAF2A11162C00C42FB3 /* ResourceRequest.swift */,
+				2351859629AE8B6A00277D21 /* HttpClient.swift */,
+				2351859829AE946B00277D21 /* Constants.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		235CFF66299A34B8009EDC1B /* Lectures */ = {
 			isa = PBXGroup;
 			children = (
 				235CFF6A299A351E009EDC1B /* LectureTeacher.storyboard */,
 				235CFF6C299A377D009EDC1B /* LectureTeacherTableViewController.swift */,
+				237C2A5B29F83E5B00175EDE /* QRCodeViewController.swift */,
 			);
 			path = Lectures;
 			sourceTree = "<group>";
@@ -166,17 +198,8 @@
 		236DCAD42953265D00C2C0D1 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				236C2E91299E209700CDB838 /* Lecture+CoreDataClass.swift */,
-				236C2E92299E209700CDB838 /* Lecture+CoreDataProperties.swift */,
-				235CFF7A299A41D2009EDC1B /* Teacher+CoreDataClass.swift */,
-				235CFF78299A3CC1009EDC1B /* Teacher+CoreDataProperties.swift */,
-				23C95AA5298A6A9100261FBD /* Student+CoreDataClass.swift */,
-				23C95AA6298A6A9100261FBD /* Student+CoreDataProperties.swift */,
-				23C95AA7298A6A9100261FBD /* Group+CoreDataClass.swift */,
-				23C95AA8298A6A9100261FBD /* Group+CoreDataProperties.swift */,
-				23C95AA9298A6A9100261FBD /* User+CoreDataClass.swift */,
-				23C95AAA298A6A9100261FBD /* User+CoreDataProperties.swift */,
 				23B64D222951E27E00ED81B7 /* dyploma.xcdatamodeld */,
+				235185AE29AEDF2E00277D21 /* DyplomaModel.xcdatamodeld */,
 				236DCAE529546CDB00C2C0D1 /* CoreDataManager.swift */,
 				236DCAB62951ED3100C2C0D1 /* Students.swift */,
 			);
@@ -197,8 +220,10 @@
 		236DCB092955060400C2C0D1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				23B11CAB2A1115D200C42FB3 /* ErrorPresenter.swift */,
 				23B64D4F2951E63100ED81B7 /* NavigationController.swift */,
 				23B64D512951E66A00ED81B7 /* KeyboardHelper.swift */,
+				235185A029AED1AA00277D21 /* UIColorExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -221,8 +246,24 @@
 			children = (
 				236DCB262959E45000C2C0D1 /* Student.storyboard */,
 				236DCB282959E67B00C2C0D1 /* StudentLecturesTableViewController.swift */,
+				237C2A5D29F84B3A00175EDE /* ScannerQRViewController.swift */,
 			);
 			path = Student;
+			sourceTree = "<group>";
+		};
+		23B11C9A2A110D3E00C42FB3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				23B11C9B2A110D5900C42FB3 /* User.swift */,
+				23B11C9D2A110DBF00C42FB3 /* Group.swift */,
+				23B11C9F2A110DC700C42FB3 /* Lecture.swift */,
+				23B11CA52A110E0B00C42FB3 /* Subject.swift */,
+				23B11CA72A110E1F00C42FB3 /* StudentsOnLecture.swift */,
+				23B11CA12A110DDC00C42FB3 /* Questions.swift */,
+				23B11CA32A110DE500C42FB3 /* Answers.swift */,
+				23C291A72A13BCB5000D5B04 /* Token.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		23B64D0D2951E27E00ED81B7 = {
@@ -249,6 +290,7 @@
 		23B64D182951E27E00ED81B7 /* dyploma */ = {
 			isa = PBXGroup;
 			children = (
+				23B11C9A2A110D3E00C42FB3 /* Models */,
 				235CFF66299A34B8009EDC1B /* Lectures */,
 				23C95AB7298A832A00261FBD /* dyploma.entitlements */,
 				236DCB252959E43900C2C0D1 /* Student */,
@@ -258,6 +300,7 @@
 				236DCAB82951F3D400C2C0D1 /* Teacher */,
 				236DCB092955060400C2C0D1 /* Helpers */,
 				236DCAD42953265D00C2C0D1 /* CoreData */,
+				2351859529AE8B3E00277D21 /* Network */,
 				236DCB08295505D400C2C0D1 /* Base */,
 			);
 			path = dyploma;
@@ -394,7 +437,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				235CFF6B299A351E009EDC1B /* LectureTeacher.storyboard in Resources */,
-				23DE6BBB297EB1F90030680F /* dyploma.xcdatamodeld in Resources */,
 				236DCB0C2955F69400C2C0D1 /* Group.storyboard in Resources */,
 				236DCB272959E45000C2C0D1 /* Student.storyboard in Resources */,
 				23B64D292951E28100ED81B7 /* LaunchScreen.storyboard in Resources */,
@@ -425,32 +467,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				235CFF79299A3CC1009EDC1B /* Teacher+CoreDataProperties.swift in Sources */,
-				236C2E93299E209700CDB838 /* Lecture+CoreDataClass.swift in Sources */,
+				23B11C9E2A110DBF00C42FB3 /* Group.swift in Sources */,
+				23B11CA62A110E0B00C42FB3 /* Subject.swift in Sources */,
+				237C2A5E29F84B3A00175EDE /* ScannerQRViewController.swift in Sources */,
+				23B11CA82A110E1F00C42FB3 /* StudentsOnLecture.swift in Sources */,
+				23B11CAE2A1115D300C42FB3 /* ResourceRequestError.swift in Sources */,
+				23C291A62A13B919000D5B04 /* Auth.swift in Sources */,
 				236DCB292959E67B00C2C0D1 /* StudentLecturesTableViewController.swift in Sources */,
+				232294C52A2A941200A8BC90 /* lectureRequest.swift in Sources */,
 				23B64D522951E66A00ED81B7 /* KeyboardHelper.swift in Sources */,
 				236DCB162956432000C2C0D1 /* GroupTabBarProtocol.swift in Sources */,
+				2351859729AE8B6A00277D21 /* HttpClient.swift in Sources */,
 				235CFF6D299A377D009EDC1B /* LectureTeacherTableViewController.swift in Sources */,
-				236C2E94299E209700CDB838 /* Lecture+CoreDataProperties.swift in Sources */,
-				235CFF7B299A41D2009EDC1B /* Teacher+CoreDataClass.swift in Sources */,
 				236DCB122955FF3F00C2C0D1 /* TeacherStudentListGroupTableViewController.swift in Sources */,
+				23B11CB02A11162C00C42FB3 /* ResourceRequest.swift in Sources */,
 				236DCABE2951F48200C2C0D1 /* TeacherViewController.swift in Sources */,
-				23C95AB1298A6A9100261FBD /* Group+CoreDataClass.swift in Sources */,
-				23C95AB0298A6A9100261FBD /* Student+CoreDataProperties.swift in Sources */,
+				235185A129AED1AA00277D21 /* UIColorExtension.swift in Sources */,
+				23B11CA02A110DC700C42FB3 /* Lecture.swift in Sources */,
+				2351859929AE946B00277D21 /* Constants.swift in Sources */,
 				236DCB102955FE9A00C2C0D1 /* TeacherLectionGroupTableViewController.swift in Sources */,
-				23C95AB3298A6A9100261FBD /* User+CoreDataClass.swift in Sources */,
-				23C95AAF298A6A9100261FBD /* Student+CoreDataClass.swift in Sources */,
 				23B64D1E2951E27E00ED81B7 /* LoginViewController.swift in Sources */,
+				237C2A5C29F83E5B00175EDE /* QRCodeViewController.swift in Sources */,
 				236DCAC02951FB8B00C2C0D1 /* GroupCollectionViewCell.swift in Sources */,
 				236DCB0E2955FC1600C2C0D1 /* GroupTabBarViewController.swift in Sources */,
-				23C95AB2298A6A9100261FBD /* Group+CoreDataProperties.swift in Sources */,
-				236DCAE629546CDB00C2C0D1 /* CoreDataManager.swift in Sources */,
 				23B64D1A2951E27E00ED81B7 /* AppDelegate.swift in Sources */,
+				23C291AA2A13BF00000D5B04 /* Auth+Keychain.swift in Sources */,
+				23B11CAD2A1115D300C42FB3 /* ErrorPresenter.swift in Sources */,
 				236DCB142956002B00C2C0D1 /* TeacherSettingsGroupTableViewController.swift in Sources */,
-				236DCAB72951ED3100C2C0D1 /* Students.swift in Sources */,
-				23C95AB4298A6A9100261FBD /* User+CoreDataProperties.swift in Sources */,
+				23C291A82A13BCB5000D5B04 /* Token.swift in Sources */,
+				23B11CA42A110DE500C42FB3 /* Answers.swift in Sources */,
 				23B64D502951E63100ED81B7 /* NavigationController.swift in Sources */,
 				23B64D1C2951E27E00ED81B7 /* SceneDelegate.swift in Sources */,
+				23B11C9C2A110D5900C42FB3 /* User.swift in Sources */,
+				23B11CA22A110DDC00C42FB3 /* Questions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,15 +674,17 @@
 				INFOPLIST_FILE = dyploma/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Отмечалка";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_NSCameraUsageDescription = "что бы отсканировать QR-код нужно использование камеры";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "что бы сохранить QR-код нужно разрешение";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = waps.dyploma;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -641,7 +692,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
@@ -658,15 +709,17 @@
 				INFOPLIST_FILE = dyploma/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Отмечалка";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_NSCameraUsageDescription = "что бы отсканировать QR-код нужно использование камеры";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "что бы сохранить QR-код нужно разрешение";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = waps.dyploma;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -674,7 +727,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Release;
 		};
@@ -796,15 +849,27 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		235185AE29AEDF2E00277D21 /* DyplomaModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				235185AF29AEDF2E00277D21 /* DyplomaModel.xcdatamodel */,
+			);
+			currentVersion = 235185AF29AEDF2E00277D21 /* DyplomaModel.xcdatamodel */;
+			path = DyplomaModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		23B64D222951E27E00ED81B7 /* dyploma.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				235185A629AED8AC00277D21 /* dyploma 2.xcdatamodel */,
 				23B64D232951E27E00ED81B7 /* dyploma.xcdatamodel */,
 			);
-			currentVersion = 23B64D232951E27E00ED81B7 /* dyploma.xcdatamodel */;
+			currentVersion = 235185A629AED8AC00277D21 /* dyploma 2.xcdatamodel */;
 			path = dyploma.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
+			wrapsLines = 1;
 		};
 /* End XCVersionGroup section */
 	};

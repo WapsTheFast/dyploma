@@ -9,6 +9,6 @@ import Foundation
 
 protocol GroupTabBarProtocol{
     var group : Group! {get set}
-    var teacher : Teacher! {get set}
+    var teacher : User! {get set}
     var delegate : GroupTabBarViewController! {get set}
 }

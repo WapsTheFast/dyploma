@@ -12,31 +12,28 @@ class TeacherViewController: UICollectionViewController {
     
     private let reuseIdentifier = "groupCell"
     
-    var teacherInfo : Teacher!
-    var groups : [Group]!
+    let refreshControl : UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh(sender :)), for: .valueChanged)
+        return refreshControl
+    }()
+    
+    var teacher : User!
+    var groups : [Group] = []
+    let groupsRequest = ResourceRequest<Group>(resourcePath: "\(Endpoints.users)\(Endpoints.groups)")
     var menu : UIMenu!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureLayout()
+        configureRefreshControl()
         configureMenu()
         configureNavigationBar()
     }
     
-    override func loadView() {
-        super.loadView()
-        setupGroups()
-    }
-    
-    func setupGroups(){
-        let groupSet = teacherInfo.groups?.mutableCopy() as? NSSet
-        groups = groupSet?.allObjects as? [Group]
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        collectionView.reloadData()
+        refresh(sender: self.refreshControl)
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -44,7 +41,7 @@ class TeacherViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return teacherInfo.groups?.count ?? 0
+        return groups.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -53,10 +50,7 @@ class TeacherViewController: UICollectionViewController {
     
     func configureCell(for reuseId : String, with indexPath : IndexPath)->GroupCollectionViewCell{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseId, for: indexPath) as! GroupCollectionViewCell
-        cell.groupCellView.backgroundColor = groups[indexPath.row].color ?? UIColor.secondarySystemBackground
-        //        let alertColor = UIAlertController(title: "color", message: String(describing: groups[indexPath.row].color), preferredStyle: .alert)
-        //        alertColor.addAction(UIAlertAction(title: "ok", style: .cancel))
-        //        self.present(alertColor, animated: true)
+        cell.groupCellView.backgroundColor = UIColor(hex: groups[indexPath.row].color ?? UIColor.secondarySystemBackground.htmlRGBA)
         cell.groupCellView.layer.cornerRadius = 5
         cell.groupText.text = groups[indexPath.row].name
         return cell
@@ -66,29 +60,42 @@ class TeacherViewController: UICollectionViewController {
         let storyboard = UIStoryboard(name: "Group", bundle: nil)
         let vc = storyboard.instantiateInitialViewController() as? GroupTabBarViewController
         vc?.group = groups[indexPath.row]
-        vc?.teacher = teacherInfo
+        vc?.teacher = teacher
         self.pushToNavigationController(vc!)
+    }
+    
+    @objc private func refresh(sender : UIRefreshControl){
+        groupsRequest.getAll{
+            [weak self] groupsResult in
+            DispatchQueue.main.async {
+                sender.endRefreshing()
+            }
+            
+            switch groupsResult{
+            case .failure:
+                ErrorPresenter.showError(message: "Error with getting groups", on: self)
+            case .success(let groups):
+                DispatchQueue.main.async {
+                    [weak self] in
+                    guard let self = self else {return}
+                    self.groups = groups
+                    self.collectionView.reloadData()
+                }
+            }
+        }
+       
     }
     
 }
 
+// MARK: Actions
+
 extension TeacherViewController{
-    
-    func configureNavigationBar(){
-        self.navigationController?.isNavigationBarHidden = false
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: .add, style: .plain, target: self, action: #selector(addGroupButtonAction))
-        self.navigationItem.rightBarButtonItem?.menu = menu
-        self.navigationItem.title = teacherInfo.name
-    }
-    
-    func configureMenu(){
-        let createNewGroup = UIAction(title: "создать новую группу", image: UIImage(systemName: "person.badge.plus")) { [weak self] (action) in
-            self?.addGroupButtonAction(UIBarButtonItem())
+    @objc func logOutButtonAction(_ sender : UIBarButtonItem){
+        Auth().logout(){
+            let vc = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController() as! LoginViewController
+            self.updateRootViewController(vc) 
         }
-        let addExistingGroup = UIAction(title: "добавить существующую группу", image: UIImage(systemName: "person.line.dotted.person.fill")) { [weak self] (action) in
-            self?.addExistingGroupButtonAction(AnyObject.self)
-        }
-        menu = UIMenu(title: "взаимодействие с группами", options: .displayInline, children: [createNewGroup , addExistingGroup])
     }
     
     @objc func addGroupButtonAction(_ sender : UIBarButtonItem){
@@ -117,7 +124,7 @@ extension TeacherViewController{
         present(alert, animated: true)
     }
     
-    func addExistingGroupButtonAction(_ sender : Any){
+    func connectToExistingGroupButtonAction(_ sender : Any){
         let alert = UIAlertController(title: "Connect to",
                                       message: "input invite code:",
                                       preferredStyle: .alert)
@@ -139,53 +146,76 @@ extension TeacherViewController{
     }
     
     func saveGroup(name : String, course : String){
-        let group = CoreDataManager.shared.createGroup(name: name, course: course, teachers: [teacherInfo], students: [])
-        CoreDataManager.shared.save()
-        groups.append(group)
+//        let group = CoreDataManager.shared.createGroup(name: name, course: course, teachers: [teacherInfo], students: [])
+//        CoreDataManager.shared.save()
+//        groups.append(group)
     }
     
     func connectToGroup(inviteCode : String){
-        var flag = true
-        let groups = CoreDataManager.shared.fetchGroups()
-        for group in groups{
-            if group.inviteCode == Int(inviteCode) ?? 0{
-                flag = false
-                var flag2 = true
-                for selfGroup in self.groups{
-                    if selfGroup == group{
-                        flag2 = false
-                        let alert = UIAlertController(title: "Nope", message: "this group already added < try again", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "ok", style: .cancel))
-                        self.present(alert , animated: true)}
-                }
-                if flag2{
-                    if let group = group as Group?,
-                       var teacherGroup = group.teachers?.mutableCopy() as? NSSet{
-                        teacherGroup = teacherGroup.addingObjects(from: [teacherInfo!]) as NSSet
-                        teacherInfo.groups = (teacherInfo.groups?.addingObjects(from: [group]) ?? []) as NSSet
-                        group.teachers = teacherGroup
-                        self.groups.append(group)
-                        CoreDataManager.shared.save()
-                    }
-                }}
-        }
-        if flag{
-            let alert = UIAlertController(title: "Nope", message: "there is no group with this invite code< try again", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "ok", style: .cancel))
-            self.present(alert, animated: true)}
+//        var flag = true
+////        let groups = CoreDataManager.shared.fetchGroups()
+//        for group in groups{
+//            if group.inviteCode == Int(inviteCode) ?? 0{
+//                flag = false
+//                var flag2 = true
+//                for selfGroup in self.groups{
+//                    if selfGroup == group{
+//                        flag2 = false
+//                        let alert = UIAlertController(title: "Nope", message: "this group already added < try again", preferredStyle: .alert)
+//                        alert.addAction(UIAlertAction(title: "ok", style: .cancel))
+//                        self.present(alert , animated: true)}
+//                }
+//                if flag2{
+//                    if let group = group as Group?,
+//                       var teacherGroup = group.teachers?.mutableCopy() as? NSSet{
+//                        teacherGroup = teacherGroup.addingObjects(from: [teacherInfo!]) as NSSet
+//                        teacherInfo.groups = (teacherInfo.groups?.addingObjects(from: [group]) ?? []) as NSSet
+//                        group.teachers = teacherGroup
+//                        self.groups.append(group)
+//                        CoreDataManager.shared.save()
+//                    }
+//                }}
+//        }
+//        if flag{
+//            let alert = UIAlertController(title: "Nope", message: "there is no group with this invite code< try again", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "ok", style: .cancel))
+//            self.present(alert, animated: true)}
     }
     
 }
 
+// MARK: Configure
+
 extension TeacherViewController : UICollectionViewDelegateFlowLayout{
+    
+    func configureNavigationBar(){
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: .add, style: .plain, target: self, action: #selector(addGroupButtonAction))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.uturn.left.circle.fill"), style: .plain, target: self, action: #selector(logOutButtonAction))
+        self.navigationItem.rightBarButtonItem?.menu = menu
+        self.navigationItem.title = teacher.name + " " + teacher.surname
+    }
+    
+    func configureMenu(){
+        let createNewGroup = UIAction(title: "создать новую группу", image: UIImage(systemName: "person.badge.plus")) { [weak self] (action) in
+            self?.addGroupButtonAction(UIBarButtonItem())
+        }
+        let addExistingGroup = UIAction(title: "добавить существующую группу", image: UIImage(systemName: "person.line.dotted.person.fill")) { [weak self] (action) in
+            self?.connectToExistingGroupButtonAction(AnyObject.self)
+        }
+        menu = UIMenu(title: "взаимодействие с группами", options: .displayInline, children: [createNewGroup , addExistingGroup])
+    }
+    
     func configureLayout(){
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 65, height: 65)
+        layout.itemSize = CGSize(width: 100, height: 100)
         layout.minimumLineSpacing = 5
         layout.minimumInteritemSpacing = 5
         layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         collectionView.collectionViewLayout = layout
-        
     }
     
+    func configureRefreshControl(){
+        self.collectionView.refreshControl = self.refreshControl
+    }
 }

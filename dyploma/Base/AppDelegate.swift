@@ -11,11 +11,22 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        CoreDataManager.shared.load()
+//        CoreDataManager.shared.deleteAll(entity: .Teacher)
+//        CoreDataManager.shared.deleteAll(entity: .Group)
+//        CoreDataManager.shared.deleteAll(entity: .User)
+//        CoreDataManager.shared.deleteAll(entity: .Student)
+//        CoreDataManager.shared.deleteAll(entity: .Lecture)
+//        CoreDataManager.shared.load()
+//        if Auth().token == nil {
+//          let rootController = UIStoryboard(name: "Login", bundle: Bundle.main)
+//            .instantiateInitialViewController()
+//          window?.rootViewController = rootController
+        //}
         return true
     }
 

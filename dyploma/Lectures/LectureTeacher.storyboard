@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nM3-6J-Nf9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nM3-6J-Nf9">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,9 +21,12 @@
                             <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="Code"/>
+                            <buttonConfiguration key="configuration" style="plain" title="код лекции"/>
                             <connections>
                                 <action selector="generateCodeButtonAction:" destination="nM3-6J-Nf9" eventType="touchUpInside" id="zBL-jh-FPi"/>
+                                <segue destination="hEu-rq-Pxx" kind="popoverPresentation" identifier="toQrCode" popoverAnchorView="ifV-DD-1wg" id="IPV-7I-TUY">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
+                                </segue>
                             </connections>
                         </button>
                         <prototypes>
@@ -63,8 +68,66 @@
             </objects>
             <point key="canvasLocation" x="647" y="-68"/>
         </scene>
+        <!--Code View Controller-->
+        <scene sceneID="NrY-4j-P2b">
+            <objects>
+                <viewController id="hEu-rq-Pxx" customClass="QRCodeViewController" customModule="dyploma" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UzG-cZ-esp">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8ty-sa-Ych">
+                                <rect key="frame" x="25" y="50" width="343" height="343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8ty-sa-Ych" secondAttribute="height" multiplier="1:1" id="idK-7B-QqN"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Z5e-0t-PGV">
+                                <rect key="frame" x="10" y="413" width="373" height="34.333333333333314"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCk-qI-rmf">
+                                        <rect key="frame" x="0.0" y="0.0" width="174" height="34.333333333333336"/>
+                                        <buttonConfiguration key="configuration" style="gray" image="square.and.arrow.up" catalog="system"/>
+                                        <connections>
+                                            <action selector="shareButtonAction:" destination="hEu-rq-Pxx" eventType="touchUpInside" id="jn1-FT-LZB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tj9-sM-Awz">
+                                        <rect key="frame" x="199" y="0.0" width="174" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" image="arrow.clockwise" catalog="system"/>
+                                        <connections>
+                                            <action selector="regenerateButtonAction:" destination="hEu-rq-Pxx" eventType="touchUpInside" id="qNL-nW-GvK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZGs-dZ-w32"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Z5e-0t-PGV" firstAttribute="leading" secondItem="ZGs-dZ-w32" secondAttribute="leading" constant="10" id="8Qr-Sc-MBU"/>
+                            <constraint firstItem="8ty-sa-Ych" firstAttribute="top" secondItem="ZGs-dZ-w32" secondAttribute="top" constant="50" id="Exy-uM-ydp"/>
+                            <constraint firstItem="ZGs-dZ-w32" firstAttribute="trailing" secondItem="Z5e-0t-PGV" secondAttribute="trailing" constant="10" id="Hsq-yL-dym"/>
+                            <constraint firstItem="Z5e-0t-PGV" firstAttribute="top" secondItem="8ty-sa-Ych" secondAttribute="bottom" constant="20" id="OMP-Nl-iV3"/>
+                            <constraint firstItem="8ty-sa-Ych" firstAttribute="centerX" secondItem="UzG-cZ-esp" secondAttribute="centerX" id="OZd-2Y-Fkg"/>
+                            <constraint firstItem="8ty-sa-Ych" firstAttribute="leading" secondItem="ZGs-dZ-w32" secondAttribute="leading" constant="25" id="ZXc-OG-DVG"/>
+                            <constraint firstItem="ZGs-dZ-w32" firstAttribute="trailing" secondItem="8ty-sa-Ych" secondAttribute="trailing" constant="25" id="taZ-Fg-KmG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="AN3-RJ-LxK"/>
+                    <connections>
+                        <outlet property="qrCode" destination="8ty-sa-Ych" id="keY-Zy-gEe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J7O-NI-3Fd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1418" y="-68"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="113" height="128"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

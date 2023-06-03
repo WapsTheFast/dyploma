@@ -10,7 +10,7 @@ import UIKit
 class GroupTabBarViewController: UITabBarController {
     
     var group : Group!
-    var teacher : Teacher!
+    var teacher : User!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -17,20 +17,71 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         //UserDefaultsManager.storage.setBool(value: false, data: .onBoardingIsShowed)
+        
+
         guard let windowScene = (scene as? UIWindowScene) else { return }
-                window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-                window?.windowScene = windowScene
-        var navigationController : NavigationController
-//        if currentReachabilityStatus == .notReachable{
-//            navigationController = NavigationController(rootViewController: UIStoryboard(name: "NoInternetStoryboard", bundle: nil).instantiateInitialViewController()!)
-//        }else if !UserDefaultsManager.storage.getBool(data: .onBoardingIsShowed){
-//            navigationController = NavigationController(rootViewController: UIStoryboard(name: "OnBoardingStoryboard", bundle: nil).instantiateInitialViewController()!)
-//        }else{
-//            navigationController = NavigationController(rootViewController: UIStoryboard(name: "LoginViewStoryboard", bundle: nil).instantiateInitialViewController()!)
-//        }
-        navigationController = NavigationController(rootViewController: UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController()!)
-        window?.rootViewController = navigationController
-                window?.makeKeyAndVisible()
+        
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene = windowScene
+//        let activityIndicator = UIActivityIndicatorView(style: .medium)
+//        activityIndicator.hidesWhenStopped = true
+//        activityIndicator.center = window!.center
+        var navigationController : NavigationController!
+        
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let windowFirst = windowScene.windows.first else {
+            return
+        }
+
+        // Create and configure the activity indicator
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.center = windowFirst.center
+        activityIndicator.backgroundColor = UIColor.clear
+        windowFirst.backgroundColor = UIColor.systemBackground
+        windowFirst.addSubview(activityIndicator)
+        self.window?.makeKeyAndVisible()
+        windowFirst.bringSubviewToFront(activityIndicator)
+        if Auth().token != nil{
+            activityIndicator.startAnimating()
+            Auth().getUserInfo{
+                result, user in
+                switch result{
+                case .success:
+                    DispatchQueue.main.async {
+                        activityIndicator.stopAnimating()
+                        if user?.role == .teacher{
+                            let storyboard = UIStoryboard(name: "Teacher", bundle: nil)
+                            let vc = storyboard.instantiateInitialViewController() as! TeacherViewController
+                            vc.teacher = user
+                            navigationController = NavigationController(rootViewController: vc)
+                            self.window?.rootViewController = navigationController
+                            self.window?.makeKeyAndVisible()
+                        }else if user?.role == .student{
+                            let storyboard = UIStoryboard(name: "Student", bundle: nil)
+                            let vc = storyboard.instantiateInitialViewController() as! StudentLecturesTableViewController
+                            vc.student = user
+                            navigationController = NavigationController(rootViewController: vc)
+                            self.window?.rootViewController = navigationController
+                            self.window?.makeKeyAndVisible()
+                        }
+                    }
+                case .failure:
+                    DispatchQueue.main.async {
+                        activityIndicator.stopAnimating()
+                        navigationController = NavigationController(rootViewController: UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController()!)
+                        self.window?.rootViewController = navigationController
+                        self.window?.makeKeyAndVisible()
+                    }
+                }
+            }
+            
+        }else{
+            navigationController = NavigationController(rootViewController: UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController()!)
+            window?.rootViewController = navigationController
+                    window?.makeKeyAndVisible()
+        }
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -62,7 +113,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Save changes in the application's managed object context when the application transitions to the background.
         //(UIApplication.shared.delegate as? AppDelegate)?.saveContext()
-        CoreDataManager.shared.save()
+//        CoreDataManager.shared.save()
     }
 
 

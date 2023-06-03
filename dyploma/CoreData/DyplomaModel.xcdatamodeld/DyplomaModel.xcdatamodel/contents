@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22D68" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Group" representedClassName=".Group" syncable="YES" codeGenerationType="class">
+        <attribute name="color" optional="YES" attributeType="String"/>
+        <attribute name="course" attributeType="String"/>
+        <attribute name="inviteCode" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String"/>
+        <relationship name="lectures" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Lecture" inverseName="group" inverseEntity="Lecture"/>
+        <relationship name="students" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Student" inverseName="group" inverseEntity="Student"/>
+        <relationship name="teachers" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Teacher" inverseName="groups" inverseEntity="Teacher"/>
+    </entity>
+    <entity name="Lecture" representedClassName=".Lecture" syncable="YES" codeGenerationType="class">
+        <attribute name="code" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="matherial" optional="YES" attributeType="String"/>
+        <attribute name="state" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" customClassName="LectureState"/>
+        <attribute name="theme" attributeType="String"/>
+        <relationship name="group" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Group" inverseName="lectures" inverseEntity="Group"/>
+        <relationship name="students" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Student" inverseName="lectures" inverseEntity="Student"/>
+        <relationship name="teacher" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Teacher" inverseName="lectures" inverseEntity="Teacher"/>
+    </entity>
+    <entity name="Student" representedClassName=".Student" syncable="YES" codeGenerationType="class">
+        <attribute name="name" attributeType="String"/>
+        <relationship name="group" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Group" inverseName="students" inverseEntity="Group"/>
+        <relationship name="lectures" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Lecture" inverseName="students" inverseEntity="Lecture"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="User" inverseName="student" inverseEntity="User"/>
+    </entity>
+    <entity name="Teacher" representedClassName=".Teacher" syncable="YES" codeGenerationType="class">
+        <attribute name="name" attributeType="String"/>
+        <relationship name="groups" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Group" inverseName="teachers" inverseEntity="Group"/>
+        <relationship name="lectures" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Lecture" inverseName="teacher" inverseEntity="Lecture"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="User" inverseName="teacher" inverseEntity="User"/>
+    </entity>
+    <entity name="User" representedClassName=".User" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="login" attributeType="String"/>
+        <attribute name="password" attributeType="String"/>
+        <relationship name="student" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Student" inverseName="user" inverseEntity="Student"/>
+        <relationship name="teacher" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Teacher" inverseName="user" inverseEntity="Teacher"/>
+    </entity>
+</model>
